@@ -1,0 +1,3 @@
+/home/luyimin/My_Code/CMakeFiles/ls.dir
+/home/luyimin/My_Code/CMakeFiles/edit_cache.dir
+/home/luyimin/My_Code/CMakeFiles/rebuild_cache.dir

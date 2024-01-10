@@ -114,9 +114,3 @@ void Ls::LsLoop() {
     PrintFileName();
   }
 }
-
-int main(int argc, char *argv[])
-{
-  Ls ls(argv[1]);
-  ls.LsLoop();
-}
