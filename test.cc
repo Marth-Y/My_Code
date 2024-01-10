@@ -2,7 +2,6 @@
 #include "tree.h"
 #include "chmod.h"
 
-
 void TestLs(char* path) {
   Ls ls(path);
   ls.LsLoop();
