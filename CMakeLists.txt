@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
-project(ls)
+project(test)
 
 set(SOURCES 
     ./system/src/ls.cc
+    ./system/src/tree.cc
+    ./system/src/chmod.cc
     ./test.cc
 )
 

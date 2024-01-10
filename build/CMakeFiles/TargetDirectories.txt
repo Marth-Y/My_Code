@@ -1,0 +1,3 @@
+/home/luyimin/My_Code/build/CMakeFiles/test.dir
+/home/luyimin/My_Code/build/CMakeFiles/edit_cache.dir
+/home/luyimin/My_Code/build/CMakeFiles/rebuild_cache.dir

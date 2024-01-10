@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/luyimin/My_Code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luyimin/My_Code
+CMAKE_BINARY_DIR = /home/luyimin/My_Code/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luyimin/My_Code/CMakeFiles /home/luyimin/My_Code//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luyimin/My_Code/build/CMakeFiles /home/luyimin/My_Code/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luyimin/My_Code/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luyimin/My_Code/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ls
+# Target rules for targets named test
 
 # Build rule for target.
-ls: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ls
-.PHONY : ls
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
 
 # fast build rule for target.
-ls/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/build
-.PHONY : ls/fast
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+system/src/chmod.o: system/src/chmod.cc.o
+.PHONY : system/src/chmod.o
+
+# target to build an object file
+system/src/chmod.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/chmod.cc.o
+.PHONY : system/src/chmod.cc.o
+
+system/src/chmod.i: system/src/chmod.cc.i
+.PHONY : system/src/chmod.i
+
+# target to preprocess a source file
+system/src/chmod.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/chmod.cc.i
+.PHONY : system/src/chmod.cc.i
+
+system/src/chmod.s: system/src/chmod.cc.s
+.PHONY : system/src/chmod.s
+
+# target to generate assembly for a file
+system/src/chmod.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/chmod.cc.s
+.PHONY : system/src/chmod.cc.s
 
 system/src/ls.o: system/src/ls.cc.o
 .PHONY : system/src/ls.o
 
 # target to build an object file
 system/src/ls.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/system/src/ls.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/ls.cc.o
 .PHONY : system/src/ls.cc.o
 
 system/src/ls.i: system/src/ls.cc.i
@@ -142,7 +166,7 @@ system/src/ls.i: system/src/ls.cc.i
 
 # target to preprocess a source file
 system/src/ls.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/system/src/ls.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/ls.cc.i
 .PHONY : system/src/ls.cc.i
 
 system/src/ls.s: system/src/ls.cc.s
@@ -150,15 +174,39 @@ system/src/ls.s: system/src/ls.cc.s
 
 # target to generate assembly for a file
 system/src/ls.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/system/src/ls.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/ls.cc.s
 .PHONY : system/src/ls.cc.s
+
+system/src/tree.o: system/src/tree.cc.o
+.PHONY : system/src/tree.o
+
+# target to build an object file
+system/src/tree.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/tree.cc.o
+.PHONY : system/src/tree.cc.o
+
+system/src/tree.i: system/src/tree.cc.i
+.PHONY : system/src/tree.i
+
+# target to preprocess a source file
+system/src/tree.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/tree.cc.i
+.PHONY : system/src/tree.cc.i
+
+system/src/tree.s: system/src/tree.cc.s
+.PHONY : system/src/tree.s
+
+# target to generate assembly for a file
+system/src/tree.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/system/src/tree.cc.s
+.PHONY : system/src/tree.cc.s
 
 test.o: test.cc.o
 .PHONY : test.o
 
 # target to build an object file
 test.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/test.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cc.o
 .PHONY : test.cc.o
 
 test.i: test.cc.i
@@ -166,7 +214,7 @@ test.i: test.cc.i
 
 # target to preprocess a source file
 test.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/test.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cc.i
 .PHONY : test.cc.i
 
 test.s: test.cc.s
@@ -174,7 +222,7 @@ test.s: test.cc.s
 
 # target to generate assembly for a file
 test.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/test.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cc.s
 .PHONY : test.cc.s
 
 # Help Target
@@ -185,10 +233,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ls"
+	@echo "... test"
+	@echo "... system/src/chmod.o"
+	@echo "... system/src/chmod.i"
+	@echo "... system/src/chmod.s"
 	@echo "... system/src/ls.o"
 	@echo "... system/src/ls.i"
 	@echo "... system/src/ls.s"
+	@echo "... system/src/tree.o"
+	@echo "... system/src/tree.i"
+	@echo "... system/src/tree.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

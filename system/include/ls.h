@@ -1,18 +1,5 @@
 #include "debug.h"
-// C
-#include <dirent.h>
-#include <errno.h>
-#include <stdio.h>
-#include <pwd.h>
-#include <grp.h>
-#include <time.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
 
-#include <string>
-using std::string;
 
 class Ls
 {

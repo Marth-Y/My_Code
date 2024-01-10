@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/ls.dir/system/src/ls.cc.o CMakeFiles/ls.dir/system/src/tree.cc.o CMakeFiles/ls.dir/test.cc.o -o ls 

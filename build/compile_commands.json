@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/luyimin/My_Code/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/system/include -g -o CMakeFiles/test.dir/system/src/ls.cc.o -c /home/luyimin/My_Code/system/src/ls.cc",
+  "file": "/home/luyimin/My_Code/system/src/ls.cc"
+},
+{
+  "directory": "/home/luyimin/My_Code/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/system/include -g -o CMakeFiles/test.dir/system/src/tree.cc.o -c /home/luyimin/My_Code/system/src/tree.cc",
+  "file": "/home/luyimin/My_Code/system/src/tree.cc"
+},
+{
+  "directory": "/home/luyimin/My_Code/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/system/include -g -o CMakeFiles/test.dir/system/src/chmod.cc.o -c /home/luyimin/My_Code/system/src/chmod.cc",
+  "file": "/home/luyimin/My_Code/system/src/chmod.cc"
+},
+{
+  "directory": "/home/luyimin/My_Code/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/system/include -g -o CMakeFiles/test.dir/test.cc.o -c /home/luyimin/My_Code/test.cc",
+  "file": "/home/luyimin/My_Code/test.cc"
+}
+]
