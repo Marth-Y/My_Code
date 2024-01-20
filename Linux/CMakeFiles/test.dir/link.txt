@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test.dir/system/src/ls.cc.o CMakeFiles/test.dir/system/src/tree.cc.o CMakeFiles/test.dir/system/src/chmod.cc.o CMakeFiles/test.dir/test.cc.o -o test 
