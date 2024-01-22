@@ -1,0 +1,3 @@
+/home/luyimin/My_Code/Conroutine/CMakeFiles/conroutine.dir
+/home/luyimin/My_Code/Conroutine/CMakeFiles/edit_cache.dir
+/home/luyimin/My_Code/Conroutine/CMakeFiles/rebuild_cache.dir

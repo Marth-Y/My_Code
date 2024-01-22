@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/luyimin/My_Code/Conroutine/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/Conroutine/include -g -o CMakeFiles/conroutine.dir/src/Fiber.cc.o -c /home/luyimin/My_Code/Conroutine/src/Fiber.cc",
+  "file": "/home/luyimin/My_Code/Conroutine/src/Fiber.cc"
+},
+{
+  "directory": "/home/luyimin/My_Code/Conroutine/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/Conroutine/include -g -o CMakeFiles/conroutine.dir/test.cc.o -c /home/luyimin/My_Code/Conroutine/test.cc",
+  "file": "/home/luyimin/My_Code/Conroutine/test.cc"
+}
+]
