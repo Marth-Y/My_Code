@@ -2,6 +2,8 @@
 #include <errno.h>
 #include <error.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
 
 #define ERROR_CHECK(pointer, argv, funcname) \
   do                                         \

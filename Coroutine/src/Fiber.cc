@@ -1,4 +1,5 @@
-#include "Fiber.h"
+#include "../include/Fiber.h"
+#include <unistd.h>
 
 namespace Coroutine {
 
@@ -9,6 +10,8 @@ static std::atomic<uint64_t> s_fiber_id = 0;
 static thread_local Fiber* t_fiber = nullptr;
 // 当前线程的主协程
 static thread_local Fiber::ptr t_thread_fiber = nullptr;
+
+using StackAllocator = MallocStackAllocator;
 
 Fiber::Fiber()
 {
@@ -29,8 +32,9 @@ Fiber::Fiber(std::function<void()> cb, size_t stacksize, bool run_in_scheduler)
     ret_ = 0;
     ++s_fiber_count;
     // m_stacksize_ = stacksize?stacksize : g_fiber_stack_size->getValue();
-    m_stacksize_ = stacksize ? stacksize : 1000;
-    m_stack_ = malloc(m_stacksize_);
+    // 大坑：栈空间分配不够，栈向下占用其他内存空间,导致其他成员变量异常，最终导致core dump！！
+    m_stacksize_ = stacksize ? stacksize : 4096;
+    m_stack_ = StackAllocator::Alloc(m_stacksize_);
 
     ret_ = getcontext(&m_ctx_);
     ERROR_CHECK(ret_, -1, "getcontext");
@@ -46,7 +50,7 @@ Fiber::~Fiber() {
     -- s_fiber_count;
     if (m_stack_) {
         assert(m_state_ == TERM);
-        free(m_stack_);
+        StackAllocator::Dealloc(m_stack_, m_stacksize_);
     } else {
         assert(!m_cb_);
         assert(m_state_ == RUNNING);
@@ -56,7 +60,8 @@ Fiber::~Fiber() {
             SetThis(nullptr);
         }
     }
-    fprintf(stderr, "Fiber::~Fiber id = %ld, total = %ld\n", s_fiber_id, s_fiber_count);
+    // fprintf(stderr, "Fiber::~Fiber id = %ld, total = %ld\n", s_fiber_id, s_fiber_count);
+    // std::cout << "Fiber::~Fiber id = "<< s_fiber_id << ", total = " << s_fiber_count << "\n";
 }
 
 // 重置协程是为了重复利用已结束运行的协程的栈空间,创建新的协程
@@ -131,9 +136,13 @@ void Fiber::MainFunc() {
     ERROR_CHECK(cur, nullptr, "GetThis");
 
     // 真正的执行协程
-    cur->m_cb_();
-    cur->m_cb_ = nullptr;
-    cur->m_state_ = TERM;
+    try{
+        cur->m_cb_();
+        cur->m_cb_ = nullptr;
+        cur->m_state_ = TERM;
+    } catch (...){
+        std::cout << "gg" << std::endl;
+    }
 
     // 手动让t_fiber的引用计数-1
     auto raw_ptr = cur.get();

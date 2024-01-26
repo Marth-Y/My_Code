@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luyimin/My_Code/Conroutine
+CMAKE_SOURCE_DIR = /home/luyimin/My_Code/Coroutine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luyimin/My_Code/Conroutine/build
+CMAKE_BINARY_DIR = /home/luyimin/My_Code/Coroutine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luyimin/My_Code/Conroutine/build/CMakeFiles /home/luyimin/My_Code/Conroutine/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luyimin/My_Code/Coroutine/build/CMakeFiles /home/luyimin/My_Code/Coroutine/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luyimin/My_Code/Conroutine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luyimin/My_Code/Coroutine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,6 +153,30 @@ src/Fiber.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/conroutine.dir/build.make CMakeFiles/conroutine.dir/src/Fiber.cc.s
 .PHONY : src/Fiber.cc.s
 
+src/Simple_Fiber_Scheduler.o: src/Simple_Fiber_Scheduler.cc.o
+.PHONY : src/Simple_Fiber_Scheduler.o
+
+# target to build an object file
+src/Simple_Fiber_Scheduler.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conroutine.dir/build.make CMakeFiles/conroutine.dir/src/Simple_Fiber_Scheduler.cc.o
+.PHONY : src/Simple_Fiber_Scheduler.cc.o
+
+src/Simple_Fiber_Scheduler.i: src/Simple_Fiber_Scheduler.cc.i
+.PHONY : src/Simple_Fiber_Scheduler.i
+
+# target to preprocess a source file
+src/Simple_Fiber_Scheduler.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conroutine.dir/build.make CMakeFiles/conroutine.dir/src/Simple_Fiber_Scheduler.cc.i
+.PHONY : src/Simple_Fiber_Scheduler.cc.i
+
+src/Simple_Fiber_Scheduler.s: src/Simple_Fiber_Scheduler.cc.s
+.PHONY : src/Simple_Fiber_Scheduler.s
+
+# target to generate assembly for a file
+src/Simple_Fiber_Scheduler.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conroutine.dir/build.make CMakeFiles/conroutine.dir/src/Simple_Fiber_Scheduler.cc.s
+.PHONY : src/Simple_Fiber_Scheduler.cc.s
+
 test.o: test.cc.o
 .PHONY : test.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... src/Fiber.o"
 	@echo "... src/Fiber.i"
 	@echo "... src/Fiber.s"
+	@echo "... src/Simple_Fiber_Scheduler.o"
+	@echo "... src/Simple_Fiber_Scheduler.i"
+	@echo "... src/Simple_Fiber_Scheduler.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

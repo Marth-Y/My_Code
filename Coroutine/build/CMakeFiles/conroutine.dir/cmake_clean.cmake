@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/conroutine.dir/src/Fiber.cc.o"
   "CMakeFiles/conroutine.dir/src/Fiber.cc.o.d"
+  "CMakeFiles/conroutine.dir/src/Simple_Fiber_Scheduler.cc.o"
+  "CMakeFiles/conroutine.dir/src/Simple_Fiber_Scheduler.cc.o.d"
   "CMakeFiles/conroutine.dir/test.cc.o"
   "CMakeFiles/conroutine.dir/test.cc.o.d"
   "conroutine"

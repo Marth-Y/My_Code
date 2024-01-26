@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/luyimin/My_Code/Conroutine/src/Fiber.cc" "CMakeFiles/conroutine.dir/src/Fiber.cc.o" "gcc" "CMakeFiles/conroutine.dir/src/Fiber.cc.o.d"
-  "/home/luyimin/My_Code/Conroutine/test.cc" "CMakeFiles/conroutine.dir/test.cc.o" "gcc" "CMakeFiles/conroutine.dir/test.cc.o.d"
+  "/home/luyimin/My_Code/Coroutine/src/Fiber.cc" "CMakeFiles/conroutine.dir/src/Fiber.cc.o" "gcc" "CMakeFiles/conroutine.dir/src/Fiber.cc.o.d"
+  "/home/luyimin/My_Code/Coroutine/src/Simple_Fiber_Scheduler.cc" "CMakeFiles/conroutine.dir/src/Simple_Fiber_Scheduler.cc.o" "gcc" "CMakeFiles/conroutine.dir/src/Simple_Fiber_Scheduler.cc.o.d"
+  "/home/luyimin/My_Code/Coroutine/test.cc" "CMakeFiles/conroutine.dir/test.cc.o" "gcc" "CMakeFiles/conroutine.dir/test.cc.o.d"
   )
 
 # Targets to which this target links.
