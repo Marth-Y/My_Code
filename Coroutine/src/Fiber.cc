@@ -89,8 +89,17 @@ void Fiber::Resume() {
     SetThis(this);
     m_state_ = RUNNING;
 
-    ret_ = swapcontext(&(t_thread_fiber->m_ctx_), &m_ctx_);
-    ERROR_CHECK(ret_, -1, "swapcontext");
+    /**
+     * 如果协程参与调度器调度，那么应该和调度器的主协程进行swap，而不是线程主协程
+    */
+    if (m_runInScheduler_) {
+        ret_ = swapcontext(&(Scheduler::GetMainFiber()->m_ctx_), &m_ctx_);
+        ERROR_CHECK(ret_, -1, "swapcontext");
+    } else {
+        ret_ = swapcontext(&(t_thread_fiber->m_ctx_), &m_ctx_);
+        ERROR_CHECK(ret_, -1, "swapcontext");
+    }
+
 }
 
 // 让出执行权限
@@ -100,8 +109,16 @@ void Fiber::Yield() {
     if (m_state_ != TERM) {
         m_state_ = READY;
     }
-    ret_ = swapcontext(&m_ctx_, &(t_thread_fiber->m_ctx_));
-    ERROR_CHECK(ret_, -1, "swapcontext");
+    /**
+     * 如果协程参与调度器调度，那么应该和调度器的主协程进行swap，而不是线程主协程
+    */
+    if (m_runInScheduler_) {
+        ret_ = swapcontext(&m_ctx_, &(Scheduler::GetMainFiber()->m_ctx_));
+        ERROR_CHECK(ret_, -1, "swapcontext");
+    } else {
+        ret_ = swapcontext(&m_ctx_, &(t_thread_fiber->m_ctx_));
+        ERROR_CHECK(ret_, -1, "swapcontext");
+    }
 }
 
 void Fiber::SetThis(Fiber *f) {

@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/luyimin/My_Code/Coroutine/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/Coroutine/./include -g -o CMakeFiles/conroutine.dir/src/Fiber.cc.o -c /home/luyimin/My_Code/Coroutine/src/Fiber.cc",
+  "file": "/home/luyimin/My_Code/Coroutine/src/Fiber.cc"
+},
+{
+  "directory": "/home/luyimin/My_Code/Coroutine/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/Coroutine/./include -g -o CMakeFiles/conroutine.dir/src/Simple_Fiber_Scheduler.cc.o -c /home/luyimin/My_Code/Coroutine/src/Simple_Fiber_Scheduler.cc",
+  "file": "/home/luyimin/My_Code/Coroutine/src/Simple_Fiber_Scheduler.cc"
+},
+{
+  "directory": "/home/luyimin/My_Code/Coroutine/build",
+  "command": "/usr/bin/g++  -I/home/luyimin/My_Code/Coroutine/./include -g -o CMakeFiles/conroutine.dir/test.cc.o -c /home/luyimin/My_Code/Coroutine/test.cc",
+  "file": "/home/luyimin/My_Code/Coroutine/test.cc"
+}
+]
